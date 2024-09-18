@@ -35,11 +35,11 @@ jobs:
         run: npm run build:prod
       # Route file renaming
       - name: Rename index for routing
-        run: mv dist/portfolio/index.html dist/portfolio/404.html
+        run: mv dist/portfolio/browser/index.html dist/portfolio/browser/404.html
       #Deploy to Github pages
       - name: Deploy to Pages
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
-          build_dir: dist/portfolio
+          build_dir: dist/portfolio/browser
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
